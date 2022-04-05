@@ -1,13 +1,7 @@
--- Map leader to space
-vim.g.mapleader = ' '
+require "user.options"
+require "user.keymaps"
+require "user.plugins"
+require "user.colorscheme"
+require "user.cmp"
+require "user.folding"
 
-local fn = vim.fn
-local execute = vim.api.nvim_command
-
--- Sensible defaults
-require('settings')
-
--- Key mappings
-require('keymappings')
-
-require('folding')
