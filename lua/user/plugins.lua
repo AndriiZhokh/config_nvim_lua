@@ -44,12 +44,16 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
-  use "9mm/vim-closer"
+  -- Failed to update 9mm not found on github
+  -- have no idea what to do
+  -- use "9mm/vim-closer"
   use {'tpope/vim-dispatch', opt = true, cmd = { 'Dispatch', 'Make', 'Focus', 'Start' }}
 
   -- Colorschemes
+  -- https://github.com/topics/neovim-colorscheme - list of colorschemes for Neovim
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "folke/tokyonight.nvim" -- Another nvim colorscheme
+  use "EdenEast/nightfox.nvim"
 
   -- Completion plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin

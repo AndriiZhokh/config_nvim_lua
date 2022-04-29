@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/andrii_zhokh/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["nightfox.nvim"] = {
+    loaded = true,
+    path = "/home/andrii_zhokh/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/andrii_zhokh/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -128,11 +133,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/andrii_zhokh/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
-  },
-  ["vim-closer"] = {
-    loaded = true,
-    path = "/home/andrii_zhokh/.local/share/nvim/site/pack/packer/start/vim-closer",
-    url = "https://github.com/9mm/vim-closer"
   },
   ["vim-dispatch"] = {
     commands = { "Dispatch", "Make", "Focus", "Start" },
