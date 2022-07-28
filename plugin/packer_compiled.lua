@@ -109,10 +109,20 @@ _G.packer_plugins = {
     path = "/home/andrii_zhokh/.local/share/nvim/site/pack/packer/start/colorschemes",
     url = "https://github.com/lunarvim/colorschemes"
   },
+  everforest = {
+    loaded = true,
+    path = "/home/andrii_zhokh/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/andrii_zhokh/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  ["neovim-ayu"] = {
+    loaded = true,
+    path = "/home/andrii_zhokh/.local/share/nvim/site/pack/packer/start/neovim-ayu",
+    url = "https://github.com/Shatur/neovim-ayu"
   },
   ["nightfox.nvim"] = {
     loaded = true,
@@ -161,6 +171,11 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/andrii_zhokh/.local/share/nvim/site/pack/packer/opt/vim-dispatch",
     url = "https://github.com/tpope/vim-dispatch"
+  },
+  vimwiki = {
+    loaded = true,
+    path = "/home/andrii_zhokh/.local/share/nvim/site/pack/packer/start/vimwiki",
+    url = "https://github.com/vimwiki/vimwiki"
   }
 }
 
