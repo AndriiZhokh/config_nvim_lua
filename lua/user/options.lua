@@ -1,3 +1,11 @@
+local FoldMethods = {
+  indent = 'indent',
+  syntax = 'syntax',
+  marker = 'marker',
+  expr = 'expr',
+  manual = 'manual',
+}
+
 -- :help options
 local options = {
   backup = false,                          -- creates a backup file
@@ -14,7 +22,7 @@ local options = {
   pumheight = 10,                          -- pop up menu height
   showmatch = true,
   showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
-  showtabline = 2,                      -- always show tabs
+  showtabline = 2,                         -- always show tabs
   smartcase = true,                        -- smart case
   smartindent = true,                      -- make indenting smarter again
   splitbelow = true,                       -- force all horizontal splits to go below current window
@@ -37,6 +45,9 @@ local options = {
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
+  foldenable = true,                       -- enables folding
+  foldmethod = FoldMethods.indent          -- set default folding method
+  -- nofoldenable = false                  -- disable folding
 }
 
 vim.opt.shortmess:append "c"
