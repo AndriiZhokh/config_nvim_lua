@@ -1,4 +1,4 @@
-[ ] Make Nerd fonts icons work properly on windows terminal
+[x] Make Nerd fonts icons work properly on windows terminal
 [ ] Finish chrisatmachine youtube tutorial
 [x] Fix floating window for packer.nvim updates (glitch was related to the terminal not neovim config
     just closing and opening terminal fixed it)
