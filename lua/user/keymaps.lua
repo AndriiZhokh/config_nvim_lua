@@ -58,6 +58,7 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("v", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 keymap("v", "p", '"_dP"', opts)
+-- keymap("v", "C-y", ":'<,'>w !clip.exe", opts) copy to clipboard on windows
 
 -- Visual Block --
 -- Move text up and down
