@@ -7,3 +7,5 @@ require "user.lsp"
 
 require "user.folding"
 
+in_wsl = os.getenv('WSL_DISTRO_NAME')
+print(in_wsl)
