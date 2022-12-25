@@ -53,6 +53,7 @@ keymap("i", "jk", "<ESC>", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+keymap("v", "<Space-y>", ":w !clip.exe", opts)
 
 -- Move text up and down
 keymap("v", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
