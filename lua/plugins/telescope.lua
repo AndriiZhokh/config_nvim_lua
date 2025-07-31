@@ -15,7 +15,52 @@ return {
     { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
   },
   config = function()
-    require('telescope').setup {
+    local telescope = require('telescope')
+    local builtin = require('telescope.builtin')
+    local entry_display = require('telescope.pickers.entry_display')
+
+    local previewers = require('telescope.previewers')
+    local buffer_previewer_maker = require('telescope.previewers.buffer_previewer').new_buffer_previewer
+    local defaulter = require('telescope.utils').make_default_callable
+
+    local function custom_grep_entry_maker(entry)
+      local filename, lnum, col, _ = entry:match("([^:]+):(%d+):(%d+):(.*)")
+      if not (filename and lnum and col) then
+        return nil
+      end
+
+      local utils = require("telescope.utils")
+      local devicons = require('nvim-web-devicons')
+
+      local transformed_path = utils.transform_path({}, filename)
+
+      local icon, icon_highlight = devicons.get_icon(filename, nil, { default = true })
+
+      local displayer = entry_display.create({
+        separator = ' ',
+        items = {
+          { width = 1 }, -- for icon
+          { width = 60 }, -- file path
+        },
+      })
+
+      return {
+        value = entry,
+        display = function()
+          return displayer({
+            { icon, icon_highlight },
+            string.format("%s:%s:%s", transformed_path, lnum, col),
+          })
+        end,
+        ordinal = entry,
+        filename = filename,
+        path = filename, -- 👈 This enables preview title
+        lnum = tonumber(lnum),
+        col = tonumber(col),
+      }
+    end
+
+    telescope.setup {
       defaults = {
         vimgrep_arguments = {
           'rg',
@@ -26,11 +71,19 @@ return {
           '--column',
           '--smart-case',
         },
+        path_display = { 'tail' },
         --   mappings = {
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
       },
-      -- pickers = {}
+      pickers = {
+        live_grep = {
+          entry_maker = custom_grep_entry_maker,
+        },
+        grep_string = {
+          entry_maker = custom_grep_entry_maker,
+        },
+      },
       extensions = {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
