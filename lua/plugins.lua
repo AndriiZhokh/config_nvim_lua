@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
   require 'plugins.everforest',
   require 'plugins.catppuccin',
+  require 'plugins.yugen',
   require 'plugins.treesitter',
   require 'plugins.autopairs',
   require 'plugins.mini',

@@ -8,7 +8,6 @@ return {
   end,
   config = function()
     vim.opt.background = 'dark'
-    vim.cmd.colorscheme 'everforest'
 
     vim.api.nvim_set_hl(0, 'Folded', {
       bg = '#282828',
