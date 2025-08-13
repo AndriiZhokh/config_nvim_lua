@@ -60,8 +60,9 @@ local options = {
   sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   foldenable = true,                       -- enables folding
-  foldmethod = FoldMethods.manual          -- set default folding method
+  foldmethod = FoldMethods.manual,         -- set default folding method
   -- nofoldenable = false                  -- disable folding
+  winborder = 'rounded'
 }
 
 option.shortmess:append "c"

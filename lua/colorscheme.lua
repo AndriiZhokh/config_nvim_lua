@@ -1,5 +1,6 @@
 -- local colorscheme = 'everforest'
-local colorscheme = 'yugen'
+-- local colorscheme = 'yugen'
+local colorscheme = 'nord'
 
 local status_ok, _ = pcall(vim.cmd, 'colorscheme ' .. colorscheme)
 

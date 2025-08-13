@@ -16,6 +16,7 @@ local plugins = {
   require 'plugins.everforest',
   require 'plugins.catppuccin',
   require 'plugins.yugen',
+  require 'plugins.nord',
   require 'plugins.treesitter',
   require 'plugins.autopairs',
   require 'plugins.mini',
