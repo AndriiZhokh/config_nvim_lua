@@ -23,6 +23,7 @@ local plugins = {
   require 'plugins.which-key',
   require 'plugins.telescope',
   require 'plugins.zen-mode',
+  require 'plugins.fzf-lua',
 
   -- TODO: to check new plugins
   -- https://github.com/krshrimali/context-pilot.nvim - git helper plugin

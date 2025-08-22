@@ -19,9 +19,9 @@ return {
     local builtin = require('telescope.builtin')
     local entry_display = require('telescope.pickers.entry_display')
 
-    local previewers = require('telescope.previewers')
-    local buffer_previewer_maker = require('telescope.previewers.buffer_previewer').new_buffer_previewer
-    local defaulter = require('telescope.utils').make_default_callable
+    -- local previewers = require('telescope.previewers')
+    -- local buffer_previewer_maker = require('telescope.previewers.buffer_previewer').new_buffer_previewer
+    -- local defaulter = require('telescope.utils').make_default_callable
 
     local function custom_grep_entry_maker(entry)
       local filename, lnum, col, _ = entry:match("([^:]+):(%d+):(%d+):(.*)")
@@ -33,6 +33,7 @@ return {
       local devicons = require('nvim-web-devicons')
 
       local transformed_path = utils.transform_path({}, filename)
+      print('Hello there ' .. transformed_path)
 
       local icon, icon_highlight = devicons.get_icon(filename, nil, { default = true })
 
@@ -71,7 +72,7 @@ return {
           '--column',
           '--smart-case',
         },
-        path_display = { 'tail' },
+        path_display = { 'truncate' },
         --   mappings = {
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
