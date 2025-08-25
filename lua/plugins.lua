@@ -17,6 +17,7 @@ local plugins = {
   require 'plugins.catppuccin',
   require 'plugins.yugen',
   require 'plugins.nord',
+  require 'plugins.markview',
   require 'plugins.treesitter',
   require 'plugins.autopairs',
   require 'plugins.mini',
@@ -24,7 +25,7 @@ local plugins = {
   require 'plugins.telescope',
   require 'plugins.zen-mode',
   require 'plugins.fzf-lua',
-  require 'plugins.render-markdown',
+  require 'plugins.origami',
 
   -- TODO: to check new plugins
   -- https://github.com/krshrimali/context-pilot.nvim - git helper plugin
