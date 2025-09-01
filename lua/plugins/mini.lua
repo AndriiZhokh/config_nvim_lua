@@ -2,13 +2,15 @@ return {
   'nvim-mini/mini.nvim',
   version = '*',
   config = function()
-    require('mini.ai').setup { n_lines = 500 }
-
-    require('mini.surround').setup()
-
-    require('mini.files').setup()
-
+    local mini_ai = require 'mini.ai'
+    local mini_surround = require 'mini.surround'
+    local MiniFiles = require('mini.files')
     local statusline = require 'mini.statusline'
+    local which_key = require 'which-key'
+
+    mini_ai.setup { n_lines = 500 }
+    mini_surround.setup()
+    MiniFiles.setup()
     statusline.setup { use_icons = flase }
 
     ---@diagnostic disable-next-line: duplicate-set-field
@@ -16,7 +18,6 @@ return {
       return '%2l:%-2v'
     end
     
-    local MiniFiles = require('mini.files')
 
     local function open_mini_files_current_dir()
       local buf_name = vim.api.nvim_buf_get_name(0)
@@ -40,6 +41,10 @@ return {
     end
 
     _G.MiniFilesOpenCurrentDir = open_mini_files_current_dir
-    -- vim.keymap.set('n', '<leader>mc', open_mini_files_current_dir, { desc = '[M]ini Files Current Directory' })
+
+    which_key.add {
+      { '<leader>mf', MiniFiles.open, desc = '[M]ini Files' },
+      { '<leader>mc', '<cmd>lua MiniFilesOpenCurrentDir()<CR>', desc = '[M]ini Files (Current Dir)' },
+    }
   end,
 }

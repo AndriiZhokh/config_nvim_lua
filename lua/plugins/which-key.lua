@@ -18,10 +18,10 @@ return {
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       { '<leader>b', group = '[B]uffer' },
       { '<leader>m', group = '[M]ini' },
+      { '<leader>f', group = '[F]ind' },
+      { '<leader>n', group = '[N]otes' },
 
-      { '<leader>mc', '<cmd>lua MiniFilesOpenCurrentDir()<CR>', desc = '[M]ini Files (Current Dir)' }
+      { '<leader>bd', ':bd<CR>', desc = '[D]elete current buffer' }
     }
-
-    vim.keymap.set('n', '<leader>mf', ':lua MiniFiles.open()<CR>', { desc = '[M]ini Files' })
   end,
 }
